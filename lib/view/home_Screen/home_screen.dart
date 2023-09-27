@@ -57,12 +57,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               SlidingUpPanel(
                 minHeight: Adaptive.h(40),
-                maxHeight: Adaptive.h(85),
+                maxHeight: Adaptive.h(88),
                 color: colorTransperent,
-                // parallaxEnabled: true,
-                // parallaxOffset: 0.5,
-                defaultPanelState: PanelState.CLOSED,
-                
+              parallaxEnabled: true,
+              parallaxOffset: 1.0,
 
                 body: PageView(
                   pageSnapping: false,
@@ -72,11 +70,14 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 panelBuilder: (sc) => PanelWidgets(),
-                onPanelSlide: (position) {
+                onPanelSlide: (position) async{
                   if (position>0.5) {
                     provider.boolChanging(true);
+                   
+                    
                   }else{
                     provider.boolChanging(false);
+                   
                   }
                 },
               ),
@@ -85,14 +86,17 @@ class HomeScreen extends StatelessWidget {
                   return floatValue.isValue==false? Positioned(
                     bottom: Adaptive.h(5),
                     left: Adaptive.h(21),
-                    child: const CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 17, 5, 70),
-                    radius: 27,
-                     backgroundImage: AssetImage('assets/images/plane.png',),
+                    child: SizedBox(
+                      
+                      child:  CircleAvatar(
+                        backgroundColor: Color.fromARGB(255, 17, 5, 70),
+                      radius: 27,
+                      child: Image.asset('assets/images/plane.png',height: Adaptive.h(5)),
+                      
                     
-
-                  )):Positioned(
-                       bottom: Adaptive.h(5),
+                                      ),
+                    )):Positioned(
+                       bottom: Adaptive.h(4.2),
                        left: Adaptive.h(2),
                     child:Container(
                      height: Adaptive.h(6.4),
@@ -107,17 +111,17 @@ class HomeScreen extends StatelessWidget {
                         Image.asset('assets/images/plane.png',width: Adaptive.w(10),),
                         sizedBoxWidth10,
                         Text("SEARCH FLIGHTS",style: TextStyle(color: textWhite,fontWeight: FontWeight.bold,fontSize: Adaptive.sp(17)),),
-                          sizedBoxWidth40,
+                          sizedBoxWidth50,
                        
                         Container(
-            height: Adaptive.h(4),
-            width: Adaptive.w(25),
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(24)
-            ),
-            child :const Center(child:  Text('On Sale',style: TextStyle(color: textWhite,fontWeight: FontWeight.bold),)),
-          ),
+                              height: Adaptive.h(4),
+                              width: Adaptive.w(25),
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(24)
+                              ),
+                              child :const Center(child:  Text('On Sale',style: TextStyle(color: textWhite,fontWeight: FontWeight.bold),)),
+                            ),
                       ],
                      ),
                     ) 

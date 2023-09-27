@@ -13,7 +13,7 @@ class PanelWidgets extends StatelessWidget {
       builder: (context,checking,child) {
         return Column(
           children: [
-          checking.isValue==false?  StatsWidgets(
+          checking.isValue==false?  const StatsWidgets(
               name: 'Eiffel Tower',
               place: 'Paris,France',
               onSale: true,

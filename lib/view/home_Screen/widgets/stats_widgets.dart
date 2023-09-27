@@ -4,7 +4,7 @@ import 'package:travel_app/utilis/colors.dart';
 import 'package:travel_app/utilis/sized_box.dart';
 
 class StatsWidgets extends StatelessWidget {
-   StatsWidgets({super.key,this.name,this.place,this.onSale});
+   const StatsWidgets({super.key,this.name,this.place,this.onSale});
   
  final String? name;
  final String? place;
@@ -30,13 +30,13 @@ class StatsWidgets extends StatelessWidget {
             child :const Center(child:  Text('On Sale',style: TextStyle(color: textWhite,fontWeight: FontWeight.bold),)),
           ),
           sizedBoxHeight10,
-          Text(name!,style: TextStyle(color: textWhite,fontSize:Adaptive.sp(18),fontWeight:FontWeight.bold),),
+          Text(name!,style: TextStyle(color: textWhite,fontSize:Adaptive.sp(22),fontWeight:FontWeight.bold),),
          // sizedBoxHeight10,
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(Icons.location_on_outlined,color: textWhite,size:Adaptive.h(2),),
-              Text(place!,style: TextStyle(color: textWhite,fontSize: Adaptive.sp(14)),)
+              Text(place!,style: TextStyle(color: textWhite,fontSize: Adaptive.sp(16)),)
             ],
           ),
           sizedBoxHeight10
