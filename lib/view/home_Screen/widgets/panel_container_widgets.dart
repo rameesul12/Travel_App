@@ -100,6 +100,7 @@ class PanelContainerWidget extends StatelessWidget {
                         fit: BoxFit.cover,
                         height: Adaptive.h(double.infinity),
                         width: Adaptive.w(double.infinity),
+                        
                       ),
                     ))
               ],
