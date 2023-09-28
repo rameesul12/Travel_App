@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                     pageSnapping: false,
                     children: [
                       blurImage.isValue == false
-                          ? Image.asset('assets/images/eiffel tower.jpg',
+                          ? Image.asset('assets/images/Eiffel_Tower_at_Night.jpg',
                               fit: BoxFit.fill)
                           : Container(
                               height: Adaptive.h(50),
